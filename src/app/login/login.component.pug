@@ -3,5 +3,6 @@ form.form([formGroup]='loginGroup', (ngSubmit)='login()')
     input(matInput, placeholder='Username', formControlName='username')
   mat-form-field
     input(matInput, placeholder='Password', formControlName='password')
-  div([fxLayout]='"row"', [fxLayoutAlign]='"center center"')
+  div([fxLayout]='"row"', [fxLayoutAlign]='"space-evenly center"')
+    button(mat-raised-button, color='primary') Register
     button(mat-raised-button, color='primary', [disabled]='loginGroup.invalid') Log in
