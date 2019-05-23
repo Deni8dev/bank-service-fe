@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginGroup: FormGroup;
+  title = 'Salamandra Bank';
 
   constructor() {
   }
