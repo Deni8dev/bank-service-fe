@@ -1,8 +1,16 @@
-form.form([formGroup]='loginGroup', (ngSubmit)='login()')
-  mat-form-field
-    input(matInput, color='primary', placeholder='Username', formControlName='username')
-  mat-form-field
-    input(matInput, placeholder='Password', formControlName='password')
-  div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
-    a(mat-button, color='primary', routerLink='.') Register
-    button.btn-primary(mat-raised-button, color='primary', [disabled]='loginGroup.invalid') Log in
+div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
+  h1.title Welcome to
+    mat-card-content
+      img.image(src='assets/slmndrgreen.png', width= '70px')
+  h1.title {{ title }}!
+  div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
+    form.form([formGroup]='loginGroup', (ngSubmit)='login()')
+      mat-form-field
+        input(matInput, color='primary', placeholder='Username', formControlName='username')
+      mat-form-field
+        input(matInput, placeholder='Password', formControlName='password')
+      div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
+        a(mat-button, color='primary', routerLink='.') Register
+        button.btn-primary(mat-raised-button, color='primary', [disabled]='loginGroup.invalid', routerLink='profile') Log in
+
+

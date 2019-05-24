@@ -8,13 +8,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RegistrationComponent } from './registration/registration.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { MovementsComponent } from './movements/movements.component';
+// import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    ProfileComponent,
+    TransactionsComponent,
+    MovementsComponent
+    // RegistrationComponent
   ],
   imports: [
     BrowserModule,
