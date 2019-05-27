@@ -11,7 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProfileComponent } from './profile/profile.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { MovementsComponent } from './movements/movements.component';
-// import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { MovementsComponent } from './movements/movements.component';
     LoginComponent,
     ProfileComponent,
     TransactionsComponent,
-    MovementsComponent
-    // RegistrationComponent
+    MovementsComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
