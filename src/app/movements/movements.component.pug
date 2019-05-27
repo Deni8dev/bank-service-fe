@@ -1,1 +1,26 @@
-p  movements works!
+div.container([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
+  h1.profile Hello {{ name }}
+  img.photo(src='assets/slmndrgreen.png', width= '100px')
+div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
+  mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your movements are:
+    mat-card-content.form
+      form.form([formGroup]='movementsGroup')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Type', formControlName='typeMovement', [disabled]='true')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Value', formControlName='valueMovement', [disabled]='true')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Date', formControlName='dateMovement', [disabled]='true')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Third Party Account', formControlName='tpAccount', [disabled]='true')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Third Party Identification', formControlName='tpIdentification', [disabled]='true')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Third Party Name', formControlName='tpName', [disabled]='true')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Approval', formControlName='approval', [disabled]='true')
+  mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Balance is:
+    mat-card-content.form
+      form.form([formGroup]='balanceGroup')
+        mat-form-field
+          input(matInput, color='primary', placeholder='Balance', formControlName='balance', [disabled]='true')

@@ -10,7 +10,6 @@ export class ProfileComponent implements OnInit {
 
   profileGroup: FormGroup;
   accountGroup: FormGroup;
-  userName = 'Salamandra';
 
   constructor() {
   }
@@ -25,10 +24,21 @@ export class ProfileComponent implements OnInit {
 
   private buildForm() {
     this.profileGroup = new FormGroup({
-      username: new FormControl('', Validators.required),
-    });
+      name: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      identificationType: new FormControl('', Validators.required),
+      identification: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
+      country: new FormControl('', Validators.required),
+      gender: new FormControl('', Validators.required)
+    })
+    ;
     this.accountGroup = new FormGroup({
       account: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
+      pass: new FormControl('', Validators.required),
     });
   }
 
