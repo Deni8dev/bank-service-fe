@@ -11,6 +11,6 @@ div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
         input(matInput, placeholder='Password', formControlName='password')
       div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
         a(mat-button, color='primary', routerLink='register') Register
-        button.btn-primary(mat-raised-button, color='primary', [disabled]='loginGroup.invalid', routerLink='profile') Log in
+        button.btn-primary(mat-raised-button, color='primary', [disabled]='loginGroup.invalid', (click)="login()") Log in
 
 
