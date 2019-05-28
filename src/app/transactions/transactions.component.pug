@@ -1,3 +1,4 @@
+button.btn-primary(mat-raised-button, color='primary', routerLink='profile') < Profile
 div.container([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
   h1.profile Transactions {{ name }}
   img.photo(src='assets/slmndrgreen.png', width= '100px')
@@ -6,16 +7,16 @@ div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
     mat-card-content.form
       form.form([formGroup]='transactionsGroup', (ngSubmit)='doTransaction()')
         mat-form-field
-          input(matInput, color='primary', placeholder='Type', formControlName='typeMovement', [disabled]='true')
+          input(matInput, color='primary', placeholder='Type', formControlName='typeMovement')
         mat-form-field
-          input(matInput, color='primary', placeholder='Value', formControlName='valueMovement', [disabled]='true')
+          input(matInput, color='primary', placeholder='Value', formControlName='valueMovement')
         mat-form-field
-          input(matInput, color='primary', placeholder='Date', formControlName='dateMovement', [disabled]='true')
+          input(matInput, color='primary', placeholder='Date', formControlName='dateMovement')
         mat-form-field
-          input(matInput, color='primary', placeholder='Third Party Account', formControlName='tpAccount', [disabled]='true')
+          input(matInput, color='primary', placeholder='Third Party Account', formControlName='tpAccount')
         mat-form-field
-          input(matInput, color='primary', placeholder='Third Party Identification', formControlName='tpIdentification', [disabled]='true')
+          input(matInput, color='primary', placeholder='Third Party Identification', formControlName='tpIdentification')
         mat-form-field
-          input(matInput, color='primary', placeholder='Third Party Name', formControlName='tpName', [disabled]='true')
-        div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
+          input(matInput, color='primary', placeholder='Third Party Name', formControlName='tpName')
+        div([fxLayout]='"row"', [fxLayoutAlign]='"start center"')
           button.btn-snd(mat-raised-button, color='primary') Confirm

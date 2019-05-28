@@ -37,9 +37,9 @@ export class ProfileComponent implements OnInit {
       gender: new FormControl('', Validators.required)
     });
     this.accountGroup = new FormGroup({
-      account: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.required),
-      pass: new FormControl('', Validators.required),
+      account: new FormControl({value: '', disabled: true}, Validators.required),
+      username: new FormControl({value: '', disabled: true}, Validators.required),
+      pass: new FormControl({value: '', disabled: true}, Validators.required),
     });
   }
 

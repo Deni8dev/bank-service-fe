@@ -21,16 +21,16 @@ export class MovementsComponent implements OnInit {
 
   private buildForm() {
     this.movementsGroup = new FormGroup({
-      typeMovement: new FormControl('', Validators.required),
-      valueMovement: new FormControl('', Validators.required),
-      dateMovement: new FormControl('', Validators.required),
-      tpAccount: new FormControl('', Validators.required),
-      tpIdentification: new FormControl('', Validators.required),
-      tpName: new FormControl('', Validators.required),
-      approval: new FormControl('', Validators.required),
+      typeMovement: new FormControl({value: '', disabled: true}, Validators.required),
+      valueMovement: new FormControl({value: '', disabled: true}, Validators.required),
+      dateMovement: new FormControl({value: '', disabled: true}, Validators.required),
+      tpAccount: new FormControl({value: '', disabled: true}, Validators.required),
+      tpIdentification: new FormControl({value: '', disabled: true}, Validators.required),
+      tpName: new FormControl({value: '', disabled: true}, Validators.required),
+      approval: new FormControl({value: '', disabled: true}, Validators.required),
     });
     this.balanceGroup = new FormGroup({
-      balance: new FormControl('', Validators.required),
+      balance: new FormControl({value: '', disabled: true}, Validators.required),
     });
   }
 }
