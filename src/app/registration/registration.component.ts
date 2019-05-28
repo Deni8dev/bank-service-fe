@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.sass']
 })
 export class RegistrationComponent implements OnInit {
+
+  registrationGroup: FormGroup;
+  title = 'Salamandra Bank';
 
   constructor() {
   }
