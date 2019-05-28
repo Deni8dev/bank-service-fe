@@ -3,7 +3,7 @@ div([fxLayout]='"row"', [fxLayoutAlign]='"end center"')
 div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
   h1.profile Hello
   div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-    h1.profile {{ name }}
+    h1.profile {{ user.name }}
       mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
         img.photo(src='assets/slmndrgreen.png', width= '70px')
 
@@ -31,6 +31,7 @@ div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
           input(matInput, color='primary', placeholder='Gender', formControlName='gender')
         div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
           button.btn-snd(mat-raised-button, color='primary') Edit
+
   mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Account:
     mat-card-content.form
       form.form([formGroup]='accountGroup')

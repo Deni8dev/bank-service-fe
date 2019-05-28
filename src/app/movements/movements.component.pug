@@ -1,4 +1,4 @@
-button.btn-primary(mat-raised-button, color='primary', routerLink='profile') < Profile
+a(mat-button, color='primary', (click)='goToProfile()') < Profile
 div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
   h1.profile Hello
   div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')

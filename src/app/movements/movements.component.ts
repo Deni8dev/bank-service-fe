@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movements',
@@ -12,11 +13,15 @@ export class MovementsComponent implements OnInit {
   movementsGroup: FormGroup;
   balanceGroup: FormGroup;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
     this.buildForm();
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile'], {replaceUrl: true});
   }
 
   private buildForm() {

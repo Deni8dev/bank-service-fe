@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transactions',
@@ -11,7 +12,7 @@ export class TransactionsComponent implements OnInit {
   name: 'Salamandra';
   transactionsGroup: FormGroup;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.buildForm();
@@ -19,6 +20,10 @@ export class TransactionsComponent implements OnInit {
 
   doTransaction() {
     console.error('Login in ' + this.transactionsGroup.getRawValue());
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile'], {replaceUrl: true});
   }
 
   private buildForm() {
