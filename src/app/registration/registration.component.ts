@@ -18,4 +18,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  Registration() {
+    console.error('Login in ' + this.registrationGroup.getRawValue());
+  }
 }
