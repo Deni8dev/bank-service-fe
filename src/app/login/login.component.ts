@@ -1,18 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from './login.service';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.pug',
-  styleUrls: ['./login.component.sass']
+  styleUrls: ['./login.component.sass'],
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
 
   loginGroup: FormGroup;
   title = 'Salamandra Bank';
 
-  constructor() {
+  constructor(private loginService: LoginService, private router: Router) {
   }
 
   ngOnInit() {
@@ -20,7 +23,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.error('Login in ' + this.loginGroup.getRawValue());
+    this.loginService
+      .login(this.loginGroup.get('username').value, this.loginGroup.getRawValue().password)
+      .subscribe(value => {
+        if (value) {
+          this.router.navigate(['profile'], {replaceUrl: true});
+        }
+      });
   }
 
   private buildForm() {

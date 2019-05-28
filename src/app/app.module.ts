@@ -12,6 +12,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { MovementsComponent } from './movements/movements.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

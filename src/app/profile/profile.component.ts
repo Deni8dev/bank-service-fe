@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProfileService } from './profile.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.pug',
-  styleUrls: ['./profile.component.sass']
+  styleUrls: ['./profile.component.sass'],
+  providers: [ProfileService]
 })
 export class ProfileComponent implements OnInit {
 
@@ -25,7 +27,7 @@ export class ProfileComponent implements OnInit {
   private buildForm() {
     this.profileGroup = new FormGroup({
       name: new FormControl('', Validators.required),
-      lastname: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       identificationType: new FormControl('', Validators.required),
       identification: new FormControl('', Validators.required),
@@ -33,8 +35,7 @@ export class ProfileComponent implements OnInit {
       address: new FormControl('', Validators.required),
       country: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required)
-    })
-    ;
+    });
     this.accountGroup = new FormGroup({
       account: new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
