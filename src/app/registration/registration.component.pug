@@ -1,17 +1,18 @@
 div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
   h1.title {{ title }}!
   div.container([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
-    h1.profile Registration
-      mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Registration:
+    h1.profile Register your account
+      mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
         mat-card-content
           img.photo(src='assets/slmndrgreen.png', width= '70px')
-    h1.title {{ title }}!
   div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
     div.container([fxLayoutGap]='"row"', [fxLayoutAlign]='"space-around center"')
       div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-evenly center"')
         form.form([formGroup]='registrationGroup', (ngSubmit)='Registration()')
           mat-form-field
             input(matInput, color='primary', placeholder='Name', formControlName='userName')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Gender', formControlName='userName')
           mat-form-field
             input(matInput, color='primary', placeholder='Email', formControlName='Email')
           mat-form-field
@@ -25,6 +26,8 @@ div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
           mat-form-field
             input(matInput, color='primary', placeholder='Surname', formControlName='userSurname')
           mat-form-field
+            input(matInput, color='primary', placeholder='', formControlName='blankSpace')
+          mat-form-field
             input(matInput, color='primary', placeholder='Bank Account', formControlName='telephone')
           mat-form-field
             input(matInput, color='primary', placeholder='Telephone', formControlName='telephone')
@@ -34,5 +37,5 @@ div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
             input(matInput, color='primary', placeholder='Confirm your Password', formControlName='passwordConfirmation')
   div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
     button.btn-primary(mat-raised-button, color='primary', [disabled]='registrationGroup.invalid', routerLink='profile') Register
-  div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"', placeholder='')
+  div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"', placeholder='   ')
 
