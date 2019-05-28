@@ -29,10 +29,6 @@ div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
     mat-card-content.form
       form.form([formGroup]='accountGroup')
         mat-form-field
-          input(matInput, color='primary', placeholder='Username', formControlName='username', [disabled]='true')
-        mat-form-field
-          input(matInput, color='primary', placeholder='Pass', formControlName='pass', [disabled]='true')
-        mat-form-field
-          input(matInput, color='primary', placeholder='Account', formControlName='account', [disabled]='true')
+          input(matInput, color='primary', placeholder='Account', formControlName='account')
         a.letter(mat-button, color='primary', routerLink='movements') Movements
         a.letter(mat-button, color='primary', routerLink='transactions') Transactions

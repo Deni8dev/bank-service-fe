@@ -14,6 +14,7 @@ import { MovementsComponent } from './movements/movements.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginService } from './login/login.service';
+import { AuthenticationGuard } from './login/authentication.guard';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { LoginService } from './login/login.service';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
