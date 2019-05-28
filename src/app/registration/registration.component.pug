@@ -1,41 +1,44 @@
 div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
   h1.title {{ title }}!
-  div.container([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
-    h1.profile Register your account
+  div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
+    h1.profile Registration
       mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
         mat-card-content
           img.photo(src='assets/slmndrgreen.png', width= '70px')
-  div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-    div.container([fxLayoutGap]='"row"', [fxLayoutAlign]='"space-around center"')
-      div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-evenly center"')
+  div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
+    mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Data User:
+      mat-card-content.form
         form.form([formGroup]='registrationGroup', (ngSubmit)='Registration()')
           mat-form-field
-            input(matInput, color='primary', placeholder='Name', formControlName='userName')
+            input(matInput, color='primary', placeholder='Name', formControlName='name')
           mat-form-field
-            input(matInput, color='primary', placeholder='Gender', formControlName='userName')
+            input(matInput, color='primary', placeholder='Last name', formControlName='lastName')
           mat-form-field
-            input(matInput, color='primary', placeholder='Email', formControlName='Email')
+            input(matInput, color='primary', placeholder='email', formControlName='email')
           mat-form-field
-            input(matInput, color='primary', placeholder='User ID', formControlName='userId')
+            input(matInput, color='primary', placeholder='Identification Type', formControlName='identificationType')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Identification', formControlName='identification')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Phone', formControlName='phone')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Address', formControlName='address')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Country', formControlName='country')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Gender', formControlName='gender')
+    mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Account:
+      mat-card-content.form
+        form.form([formGroup]='registrationGroup', (ngSubmit)='Registration()')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Email', formControlName='email')
           mat-form-field
             input(matInput, color='primary', placeholder='Username', formControlName='username')
           mat-form-field
             input(matInput, color='primary', placeholder='Password', formControlName='password')
-      div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-evenly center"')
-        form.form([formGroup]='registrationGroup', (ngSubmit)='Registration()')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Surname', formControlName='userSurname')
-          mat-form-field
-            input(matInput, color='primary', placeholder='', formControlName='blankSpace')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Bank Account', formControlName='telephone')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Telephone', formControlName='telephone')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Address', formControlName='address')
           mat-form-field
             input(matInput, color='primary', placeholder='Confirm your Password', formControlName='passwordConfirmation')
   div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
     button.btn-primary(mat-raised-button, color='primary', [disabled]='registrationGroup.invalid', routerLink='profile') Register
-  div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"', placeholder='   ')
+  div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"', placeholder='')
 

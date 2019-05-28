@@ -1,7 +1,11 @@
 button.btn-primary(mat-raised-button, color='primary', routerLink='profile') < Profile
-div.container([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
-  h1.profile Transactions {{ name }}
-  img.photo(src='assets/slmndrgreen.png', width= '100px')
+div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
+  h1.profile Hello
+  div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
+    h1.profile {{ name }}
+      mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
+        img.photo(src='assets/slmndrgreen.png', width= '70px')
+
 div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
   mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Do a transaction:
     mat-card-content.form
