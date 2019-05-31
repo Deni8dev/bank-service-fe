@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RegistrationService } from './registration.service';
 
 
 @Component({
@@ -12,15 +13,17 @@ export class RegistrationComponent implements OnInit {
   registrationGroup: FormGroup;
   title = 'Salamandra Bank';
 
-  constructor() {
+  constructor(private registrationService: RegistrationService) {
   }
 
   ngOnInit() {
     this.buildForm();
   }
 
-  Registration() {
-    console.error('Login in ' + this.registrationGroup.getRawValue());
+  registerUser() {
+    this.registrationService
+      .registerUser(this.registrationGroup.getRawValue())
+      .subscribe(() => console.log('registered'));
   }
 
   private buildForm() {
@@ -35,8 +38,7 @@ export class RegistrationComponent implements OnInit {
       country: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-      passwordConfirmation: new FormControl('', Validators.required)
+      password: new FormControl('', Validators.required)
     });
   }
 
