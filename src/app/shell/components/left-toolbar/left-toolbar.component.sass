@@ -1,0 +1,58 @@
+@import '../../../../theme/theme-color-variables'
+
+.left-toolbar-container
+  border-bottom: none
+
+  .left-toolbar-container__image
+    height: 120px
+    width: 120px
+    margin: 0 auto
+    transition: .3s all
+
+    &.collapsed
+      border-width: 5px
+      height: 48px
+      margin-top: 20px
+      width: 48px
+
+    svg
+      background: white
+      border: 3px solid #8d96a4
+      border-radius: 50%
+
+  .left-toolbar-container-empty__image
+    height: 120px
+    width: 120px
+    margin: 0 auto
+
+    &.collapsed
+      border-width: 5px
+      height: 48px
+      margin-top: 20px
+      width: 48px
+
+  .left-toolbar-container__details
+    text-align: center
+    width: 100%
+
+    .left-toolbar-container__details__company-name
+      color: white
+      font-family: Antenna, sans-serif
+      font-size: 20px
+      margin-top: 25px
+      text-transform: capitalize
+      font-weight: bold
+      width: 100%
+      word-break: break-all
+      padding-left: 15px
+      padding-right: 15px
+
+    .left-toolbar-container__details__username
+      color: white
+      font-family: Avenir Book, sans-serif
+      font-size: 14px
+      margin-top: 4px
+
+    .cyx-link-wrapper
+      margin-top: 8px
+

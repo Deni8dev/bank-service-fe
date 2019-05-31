@@ -15,6 +15,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginService } from './login/login.service';
 import { AuthenticationGuard } from './login/authentication.guard';
+import { ShellModule } from './shell/shell.module';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,10 @@ import { AuthenticationGuard } from './login/authentication.guard';
     MaterialModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ShellModule
   ],
-  providers: [AuthenticationGuard],
+  providers: [AuthenticationGuard, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

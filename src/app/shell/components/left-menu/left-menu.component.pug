@@ -1,0 +1,39 @@
+div.left-menu-container([ngClass]='navigationCollapsed == true ? "collapsed" : "expanded"')
+
+  mat-accordion([hideToggle]='true')
+    mat-expansion-panel#dmsMenu.left-menu(
+      #dmsMenu,
+      [expanded]='menus.DMS.expanded')
+
+      mat-expansion-panel-header(
+        [id]='"dmsMenuHeader"',
+        [collapsedHeight]='menuHeight',
+        [expandedHeight]='menuHeight',
+        [ngClass]='{ "collapsed" : navigationCollapsed }',
+        (click)='onClickDMSMenu()')
+
+        mat-panel-title
+          img.left-menu_icon(src='/assets/img/left-menu/dms.svg')
+          span.left-menu__text(*ngIf='!navigationCollapsed', translate) left_menu.navigation.dms.title
+
+        mat-panel-description([ngClass]='{ "collapsed" : navigationCollapsed }')
+          i.material-icons {{ dmsMenu.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+
+      a.left-menu__submenu(
+        [id]='"dmsTicketsSubmenu"',
+        routerLink='/dms/tickets',
+        routerLinkActive='active',
+        [routerLinkActiveOptions]='{ exact: false }',
+        translate) left_menu.navigation.dms.submenus.tickets
+      a.left-menu__submenu(
+        [id]='"dmsMyDomainAlertsSubmenu"',
+        routerLink='/dms/my-domain-alerts',
+        routerLinkActive='active',
+        [routerLinkActiveOptions]='{ exact: true }',
+        translate) left_menu.navigation.dms.submenus.my_domain_alerts
+      a.left-menu__submenu(
+        [id]='"dmsSettingsSubmenu"'
+        routerLink='/dms/settings',
+        routerLinkActive='active',
+        [routerLinkActiveOptions]='{ exact: false }',
+        translate) left_menu.navigation.dms.submenus.settings

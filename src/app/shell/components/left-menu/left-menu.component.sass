@@ -1,0 +1,67 @@
+@import '../../../../theme/theme-color-variables'
+
+$left-menu-max-height: 380px
+
+.left-menu-container
+  display: flex
+  flex-direction: column
+  font-family: Antenna, sans-serif
+  font-stretch: normal
+  font-style: normal
+  max-height: $left-menu-max-height
+  overflow-y: auto
+  user-select: none
+
+  &.expanded
+    padding: 20px 10px
+
+  &.collapsed
+    padding: 0
+
+  mat-expansion-panel
+    background: transparent
+    box-shadow: none
+    box-sizing: border-box
+
+    &.mat-expansion-panel-spacing
+      margin: 0
+
+    mat-expansion-panel-header
+      &.collapsed
+        padding: 0 0 0 8px
+
+      mat-panel-title
+        color: $white
+        margin: 0
+
+      mat-panel-description
+        color: $white
+        display: inline-block
+        margin: 0
+
+        &.collapsed
+          display: flex
+
+        .material-icons
+          float: right
+
+      .left-menu__text
+        align-self: center
+        font-size: 16px
+        line-height: 1.38
+        padding: 3px 0 0 24px
+        color: $white
+
+    .left-menu__submenu
+      color: $white
+      display: block
+      font-size: 16px
+      line-height: 2.5
+      padding: 0 0 0 57px
+      text-decoration: none
+
+      &:hover,
+      &.active
+        color: $light-blue
+        padding: 0 0 0 59px
+        transition: .3s all

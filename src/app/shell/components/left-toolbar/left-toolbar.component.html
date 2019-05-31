@@ -1,0 +1,31 @@
+<div class="left-toolbar-container column-centered-container">
+
+  <div class="left-toolbar-container__image" [ngClass]="{ 'collapsed': navigationCollapsed }">
+    <svg
+      identiconHash
+      width="100%"
+      height="100%"
+      [hash]="loggedUser.email">
+    </svg>
+  </div>
+
+  <div class="left-toolbar-container__details">
+
+    <p class="left-toolbar-container__details__username" *ngIf="!navigationCollapsed">
+      {{ loggedUser.name }}
+    </p>
+
+    <div class="cyx-link-wrapper">
+      <a
+        [id]="'profileSettingsLink'"
+        *ngIf="!navigationCollapsed"
+        routerLink="/profile-settings"
+        routerLinkActive="active"
+        class="left-menu__submenu"
+        [routerLinkActiveOptions]="{ exact: true }"
+        translate>
+        left_menu.edit_profile
+      </a>
+    </div>
+  </div>
+</div>

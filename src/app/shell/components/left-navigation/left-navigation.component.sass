@@ -1,0 +1,56 @@
+@import '../../../../theme/theme-color-variables'
+
+.left-nav-side-pane
+  width: 288px
+  height: 100%
+  background-color: $navy
+  transition: all .3s
+  position: fixed
+  z-index: 2
+  box-shadow: 4px 4px 8px 0 rgba(64, 64, 65, 0.4)
+
+  &.collapsed
+    width: 64px !important
+
+.left-nav-toolbar
+  width: 100%
+
+.left-toolbar-actions
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  height: 36px
+
+  .cyx-link-wrapper
+    margin-top: 6px
+
+    a
+      padding-left: 16px
+
+      &.collapsed
+        padding-left: 5px
+
+  .left-nav-button
+    background-color: $navy
+    border: none
+    border-radius: 0 8px 8px 0
+    cursor: pointer
+    float: right
+    height: 40px
+    margin-right: -24px
+    outline: none
+    padding: 3px
+    z-index: 1
+    box-shadow: 4px 4px 8px 0 rgba(64, 64, 65, 0.4)
+    transition: .3s all
+
+    i
+      color: $light-blue
+      padding-left: -8px
+
+.left-nav-divider
+  background-color: $light-blue
+  height: 1px
+  margin: 16px 15px 0
+
+

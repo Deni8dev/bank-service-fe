@@ -1,20 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css'
+@import 'theme/custom-theme'
 
-*
-  font-family: 'Open Sans', sans-serif
-  letter-spacing: 1.5px
+// The styles framework
+@import 'theme/primary-theme'
 
-html
-  height: 100%
-  width: 100%
-
-body
-  margin: 0
-  padding: 0
-  height: 100%
-  width: 100%
-  background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url('assets/back2.jpg')
-  background-repeat: no-repeat
-  background-position: center
-  background-size: cover
+// Theme variables, must be included before the libraries to allow overriding defaults
+@import 'theme/theme-variables'

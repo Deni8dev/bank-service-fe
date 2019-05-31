@@ -1,0 +1,4 @@
+section.shell-container
+  app-left-navigation((toggleMenuEvent)='onToggleMenuEvent($event)')
+  div.shell-content([ngClass]='{ "full-content": collapsedMenu }')
+    router-outlet

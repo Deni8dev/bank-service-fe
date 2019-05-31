@@ -1,0 +1,23 @@
+div.left-nav-side-pane([ngClass]='{ "collapsed": navigationCollapsed }')
+
+  div.left-nav-toolbar
+
+    div.left-toolbar-actions
+      div.cyx-link-wrapper
+        a(
+          [id]='"leftNavSidePaneSignout"',
+          [ngClass]='{ "collapsed": navigationCollapsed }',
+          (click)='signOut()',
+          translate) left_menu.sign_out
+      button.left-nav-button((click)='onToggleMenuClicked()')
+        i.material-icons {{ navigationCollapsed ? 'chevron_right': 'chevron_left' }}
+
+    div.left-toolbar-content
+      app-left-toolbar([navigationCollapsed]='navigationCollapsed')
+
+  mat-divider.left-nav-divider
+
+  app-left-menu(
+    [menus]='menus',
+    [navigationCollapsed]='navigationCollapsed',
+    (expansionMenuEvent)='onMenuItemClicked($event)')

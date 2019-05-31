@@ -25,6 +25,8 @@
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
+    "jdenticon": "^2.1.1",
+    "material-design-icons-iconfont": "^5.0.1",
     "ng-cli-pug-loader": "^0.1.7",
     "ngx-cookie-service": "^2.2.0",
     "rxjs": "~6.3.3",

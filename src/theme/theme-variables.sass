@@ -1,0 +1,26 @@
+// Application global variables.
+
+// Angular Material custom theme
+// See https://material.angular.io/guide/theming for more details.
+
+// You can also read https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1
+// for more insight about Angular Material theming.
+
+@import '~@angular/material/theming'
+
+// Variables for primary theme
+$primary-palette-color: mat-palette($mat-blue)
+$primary-palette-color-light: mat-palette($mat-light-blue)
+$primary-palette-text-color: mat-palette($mat-grey, 600)
+$secondary-palette-text-color: mat-palette($primary-palette-text-color, 400)
+
+$secondary-deep-color: #00263A
+$secondary-color: #0E3A50
+$secondary-color-light: #1D4F67
+
+$warn-color: mat-palette($mat-pink, A200, A100, A400)
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($primary-palette-color, $primary-palette-text-color, $warn-color)
+
+$app-theme-dark: mat-dark-theme($secondary-deep-color, $secondary-color, $secondary-color-light)
