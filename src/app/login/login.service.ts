@@ -20,6 +20,8 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient,
               private cookieService: CookieService) {
+    const str = this.cookieService.get(LoginService.sessionStorageKey);
+    this.sessionStorage = str ? {user: new User().deserialize(str)} : null;
   }
 
   login(name: string, pass: string): Observable<boolean> {
@@ -37,7 +39,7 @@ export class LoginService {
   }
 
   saveSessionData(u: User): void {
-    this.sessionStorage = { user: u };
+    this.sessionStorage = {user: u};
     console.log(this.sessionStorage);
     this.cookieService.set(LoginService.sessionStorageKey, JSON.stringify(u));
   }
@@ -55,7 +57,7 @@ export class LoginService {
    * @return boolean True if the user is authenticated.
    */
   isAuthenticated(): boolean {
-    return !!this.sessionUserStorage() || !!this.cookieService.get(LoginService.sessionStorageKey);
+    return !!this.sessionUserStorage();
   }
 
 }

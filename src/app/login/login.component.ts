@@ -27,9 +27,8 @@ export class LoginComponent implements OnInit {
     this.loginService
       .login(this.loginGroup.get('username').value, this.loginGroup.getRawValue().password)
       .subscribe(value => {
-        if (value) {
+        if (value)
           this.router.navigate(['profile'], {replaceUrl: true});
-        }
       });
   }
 

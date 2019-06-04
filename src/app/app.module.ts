@@ -38,7 +38,7 @@ import { EnumToArrayPipe } from './util/enum-to-array-pipe';
     HttpClientModule,
     ShellModule
   ],
-  providers: [AuthenticationGuard, CookieService],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

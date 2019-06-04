@@ -9,6 +9,7 @@ import { LeftToolbarComponent } from './components/left-toolbar/left-toolbar.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IdenticonDirective } from './components/left-toolbar/identicon.directive';
 import { AuthenticationGuard } from '../login/authentication.guard';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
@@ -24,9 +25,7 @@ import { AuthenticationGuard } from '../login/authentication.guard';
     LeftMenuComponent,
     IdenticonDirective
   ],
-  providers: [
-    AuthenticationGuard
-  ]
+  providers: [AuthenticationGuard, CookieService]
 
 })
 export class ShellModule {
