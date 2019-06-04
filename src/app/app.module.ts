@@ -12,11 +12,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { MovementsComponent } from './movements/movements.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { LoginService } from './login/login.service';
+import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationGuard } from './login/authentication.guard';
 import { ShellModule } from './shell/shell.module';
 import { CookieService } from 'ngx-cookie-service';
+import { EnumToArrayPipe } from './util/enum-to-array-pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { CookieService } from 'ngx-cookie-service';
     ProfileComponent,
     TransactionsComponent,
     MovementsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    EnumToArrayPipe
   ],
   imports: [
     BrowserModule,

@@ -1,31 +1,39 @@
-div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-  h1.title {{ title }}!
-  div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-    h1.profile Registration
-      mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-        mat-card-content
-          img.photo(src='assets/slmndrgreen.png', width= '70px')
-  div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
-    mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Data User:
-      mat-card-content.form
-        form.form([formGroup]='registrationGroup', (ngSubmit)='registerUser()')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Name', formControlName='name')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Last name', formControlName='lastName')
-          mat-form-field
-            input(matInput, color='primary', placeholder='email', formControlName='email')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Identification Type', formControlName='identificationType')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Identification', formControlName='identification')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Phone', formControlName='phone')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Address', formControlName='address')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Country', formControlName='country')
-          mat-form-field
-            input(matInput, color='primary', placeholder='Gender', formControlName='gender')
+div.form-container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
+  mat-card
+    div.form-title Register
+    mat-card-content
+      form.form([formGroup]='registrationGroup', (ngSubmit)='registerUser()')
+        mat-form-field
+          input(matInput, placeholder='Name', [(ngModel)]='model.name', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          input(matInput, placeholder='Last name', [(ngModel)]='model.lastName', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          input(matInput, placeholder='email', [(ngModel)]='model.email', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          mat-label Identification Type
+          mat-select([(ngModel)]='model.userIdType', [ngModelOptions]='{standalone: true}')
+            mat-option(*ngFor='let typeId of idTypeArray', [value]='typeId.value') {{ typeId.viewValue }}
+        mat-form-field
+          input(matInput, placeholder='Identification', [(ngModel)]='model.userId', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          input(matInput, placeholder='Phone', [(ngModel)]='model.phone', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          input(matInput, placeholder='Address', [(ngModel)]='model.address', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          input(matInput, placeholder='Country', [(ngModel)]='model.country', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          mat-label Gender
+          mat-select([(ngModel)]='model.gender', [ngModelOptions]='{standalone: true}')
+            mat-option(*ngFor='let gender of genderArray', [value]='gender.value') {{ gender.viewValue }}
 
-          button.btn-primary(mat-raised-button, color='primary', [disabled]='registrationGroup.invalid') Register
+        h4 Login Config
+        mat-form-field
+          input(matInput, placeholder='Username', [(ngModel)]='model.username', [ngModelOptions]='{standalone: true}')
+        mat-form-field
+          input(matInput, placeholder='Password', [(ngModel)]='model.password', [ngModelOptions]='{standalone: true}')
+
+        mat-error([hidden]='false') Please review all fields
+
+        div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
+          a(mat-button, color='primary', routerLink='') Cancel
+          button.btn-primary(mat-raised-button, color='primary') Register

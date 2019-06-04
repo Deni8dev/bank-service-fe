@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(this.cookieService.get(LoginService.sessionStorageKey));
-    this.account = {accountNumber: '', balance: 0, userId: 0};
+    this.account = new Account();
     this.buildForm();
     this.profileService
       .getUserAccount(this.user.id)

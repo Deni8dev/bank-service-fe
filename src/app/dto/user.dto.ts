@@ -1,4 +1,8 @@
-export class User {
+import { Deserializable } from './deserializable.dto';
+import { Gender } from './gender.dto';
+import { UserTypeId } from './user-type-id.dto';
+
+export class User implements Deserializable {
 
   id: number;
   username: string;
@@ -6,11 +10,15 @@ export class User {
   name: string;
   lastName: string;
   email: string;
-  userIdType: string;
+  userIdType: UserTypeId;
   userId: number;
   phone: number;
   address: string;
   country: string;
-  gender: string;
+  gender: Gender;
 
+  deserialize(input: any) {
+    Object.assign(this, input);
+    return this;
+  }
 }
