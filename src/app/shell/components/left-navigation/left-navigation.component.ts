@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output} from '@angular/core';
 import { Menus } from '../left-menu/left-menu.component';
 import { Router } from '@angular/router';
+import { LoginService } from '../../../login/login.service';
 
 @Component({
   selector: 'app-left-navigation',
@@ -14,7 +15,7 @@ export class LeftNavigationComponent {
   menus: Menus;
   navigationCollapsed: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService: LoginService) { }
 
   onToggleMenuClicked() {
     this.navigationCollapsed = !this.navigationCollapsed;
@@ -29,6 +30,8 @@ export class LeftNavigationComponent {
   }
 
   signOut() {
-    this.router.navigate(['/'], { replaceUrl: true });
+    this.loginService
+      .logout()
+      .subscribe(() => this.router.navigate(['/'], { replaceUrl: true }));
   }
 }

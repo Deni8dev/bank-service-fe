@@ -8,6 +8,6 @@ div.left-nav-side-pane([ngClass]='{ "collapsed": navigationCollapsed }',[fxLayou
     mat-menu(#menu3='matMenu')
       ng-template(matMenuContent)
         button(mat-menu-item, routerLink='/profile') Profile
-        button(mat-menu-item, routerLink='/') Log Out
+        button(mat-menu-item, (click)='signOut()') Log Out
 
   mat-divider.left-nav-divider

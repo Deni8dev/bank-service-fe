@@ -5,6 +5,7 @@ import { User } from '../dto/user.dto';
 import { CookieService } from 'ngx-cookie-service';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { of } from 'rxjs/internal/observable/of';
 
 
 export interface SessionStorage {
@@ -37,6 +38,12 @@ export class LoginService {
         }
         return false;
       }));
+  }
+
+  logout() {
+    this.sessionStorage = null;
+    this.cookieService.delete(LoginService.sessionStorageKey);
+    return of(true);
   }
 
   saveSessionData(u: User): void {
