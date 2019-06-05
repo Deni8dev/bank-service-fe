@@ -1,23 +1,13 @@
-div.left-nav-side-pane([ngClass]='{ "collapsed": navigationCollapsed }')
+div.left-nav-side-pane([ngClass]='{ "collapsed": navigationCollapsed }',[fxLayout]='"row"', [fxLayoutAlign]='"space-around stretch"')
 
   div.left-nav-toolbar
 
-    div.left-toolbar-actions
-      div.cyx-link-wrapper
-        a(
-          [id]='"leftNavSidePaneSignout"',
-          [ngClass]='{ "collapsed": navigationCollapsed }',
-          (click)='signOut()',
-          translate) left_menu.sign_out
-      button.left-nav-button((click)='onToggleMenuClicked()')
-        i.material-icons {{ navigationCollapsed ? 'chevron_right': 'chevron_left' }}
+  app-left-menu([menus]='menus')
 
-    div.left-toolbar-content
-      app-left-toolbar([navigationCollapsed]='navigationCollapsed')
+  button.left-toolbar-icon(mat-button, [matMenuTriggerFor]='menu3', routerLink='/profile')
+    mat-menu(#menu3='matMenu')
+      ng-template(matMenuContent)
+        button(mat-menu-item, routerLink='/profile') Profile
+        button(mat-menu-item, routerLink='/') Log Out
 
   mat-divider.left-nav-divider
-
-  app-left-menu(
-    [menus]='menus',
-    [navigationCollapsed]='navigationCollapsed',
-    (expansionMenuEvent)='onMenuItemClicked($event)')

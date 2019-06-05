@@ -27,7 +27,8 @@ export class LoginService {
   login(name: string, pass: string): Observable<boolean> {
     return this.httpClient
       .post<User>(
-        'http://localhost:8080/v1/login',
+        // 'http://localhost:8080/v1/login',
+        'http://192.168.234.57:8080/v1/login',
         {username: name, password: pass}
       ).pipe(map(user => {
         if (user) {

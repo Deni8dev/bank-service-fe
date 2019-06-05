@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IdenticonDirective } from './components/left-toolbar/identicon.directive';
 import { AuthenticationGuard } from '../login/authentication.guard';
 import { CookieService } from 'ngx-cookie-service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    FlexLayoutModule
   ],
   declarations: [
     ShellComponent,

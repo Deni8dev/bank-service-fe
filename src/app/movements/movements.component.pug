@@ -7,6 +7,12 @@ div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
         img.photo(src='assets/slmndrgreen.png', width= '70px')
 
 div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
+//table(mat-table, [datasource] = 'dataSource')
+//  ng-container()
+//    th(mat-header-cell)  COLUMN 1
+//    td(mat-cell)  COLUMN X
+
+
   mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your movements are:
     mat-card-content.form
       form.form([formGroup]='movementsGroup')
