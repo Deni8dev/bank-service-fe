@@ -4,21 +4,31 @@
   height: 48px
   padding: 0 20px
   z-index: 2
+  user-select: none
 
   .navigation
 
-  .bar-icon
-    background-image: url('/assets/slmndrgreen.png')
-    background-repeat: no-repeat
-    background-position: center
-    background-size: 40px
-    border: 3px solid #8d96a4
-    border-radius: 50%
-    width: 40px
-    height: 40px
+  .icon-bar
+    .img
+      background-image: url('/assets/slmndrgreen.png')
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 40px
+      border: 2px solid rgba(0, 0, 0, .2)
+      border-radius: 50%
+      width: 40px
+      height: 40px
+
+    .text
+      font-size: 24px
+      font-weight: bold
+      margin-left: 16px
 
   .user-bar
     display: inline-block
     padding-left: 40px
-    margin-left: 40px
-    border-left: 1px solid gray
+    margin: 0 16px 0 40px
+    border-left: 2px solid rgba(0, 0, 0, .1)
+
+    .user-name
+      margin-right: 8px

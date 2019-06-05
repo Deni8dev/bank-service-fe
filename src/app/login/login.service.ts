@@ -18,12 +18,12 @@ export interface SessionStorage {
 export class LoginService {
 
   static readonly sessionStorageKey = 'sessionStorage';
-  private sessionStorage: SessionStorage | null;
+  private sessionStorage: SessionStorage = { user: null };
 
   constructor(private httpClient: HttpClient,
               private cookieService: CookieService) {
     const str = this.cookieService.get(LoginService.sessionStorageKey);
-    this.sessionStorage = str ? {user: new User().deserialize(str)} : null;
+    this.sessionStorage = {user: str ? new User().deserialize(str) : null};
   }
 
   login(name: string, pass: string): Observable<boolean> {

@@ -20,12 +20,12 @@ export class ProfileComponent implements OnInit {
   account: Account;
   user: User;
 
-  constructor(private cookieService: CookieService,
+  constructor(private loginService: LoginService,
               private profileService: ProfileService) {
   }
 
   ngOnInit() {
-    this.user = JSON.parse(this.cookieService.get(LoginService.sessionStorageKey));
+    this.user = this.loginService.sessionUserStorage();
     this.account = new Account();
     this.buildForm();
     this.profileService

@@ -1,15 +1,19 @@
 div.top-bar([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
-  button(mat-icon-button).bar-icon
+  div.icon-bar([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
+    div.img
+    div.text Salamandra Bank
   div.navigation
-    button(mat-button, [routerLink]='"movements"') Movements
-    button(mat-button) Transactions
+    button(mat-button, [routerLink]='"/movements"') Movements
+    button(mat-button, [routerLink]='"/transactions"' ) Transactions
 
     div.user-bar
-      | {{ user.name }}
+      span.user-name {{ user.name + ' ' + user.lastName }}
       button(mat-icon-button, [matMenuTriggerFor]='menu')
         mat-icon more_vert
       mat-menu(#menu='matMenu')
         button(mat-menu-item, [routerLink]='"/profile"')
+          mat-icon settings
           span Profile Settings
         button(mat-menu-item, (click)='signOut()')
+          mat-icon exit_to_app
           span Sign out

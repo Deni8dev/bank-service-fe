@@ -6,7 +6,7 @@ export class Account implements Deserializable {
   userId: number;
 
   deserialize(input: any) {
-    Object.assign(new Account(), JSON.parse(input));
+    Object.assign(this, JSON.parse(input));
     return this;
   }
 }
