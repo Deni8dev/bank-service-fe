@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../dto/user.dto';
 import { CookieService } from 'ngx-cookie-service';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 
 export interface SessionStorage {
@@ -27,8 +28,7 @@ export class LoginService {
   login(name: string, pass: string): Observable<boolean> {
     return this.httpClient
       .post<User>(
-        // 'http://localhost:8080/v1/login',
-        'http://192.168.234.57:8080/v1/login',
+        `${environment.service_url}/login`,
         {username: name, password: pass}
       ).pipe(map(user => {
         if (user) {
