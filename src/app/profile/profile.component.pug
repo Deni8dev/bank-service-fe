@@ -1,12 +1,6 @@
-div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-  h1.profile Hello
-  div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-    h1.profile {{ user.name }}
-      mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-        img.photo(src='assets/slmndrgreen.png', width= '70px')
-
 div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
-  mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Data User:
+  mat-card
+    mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Data User:
     mat-card-content.form
       form.form([formGroup]='profileGroup', (ngSubmit)='edit()')
         mat-form-field
@@ -14,7 +8,7 @@ div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
         mat-form-field
           input(matInput, color='primary', placeholder='Last name', formControlName='lastName')
         mat-form-field
-          input(matInput, color='primary', placeholder='email', formControlName='email')
+          input(matInput, color='primary', placeholder='Email', formControlName='email')
         mat-form-field
           input(matInput, color='primary', placeholder='Identification Type', formControlName='identificationType')
         mat-form-field
@@ -28,10 +22,11 @@ div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
         mat-form-field
           input(matInput, color='primary', placeholder='Gender', formControlName='gender')
         div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
-          button.btn-snd(mat-raised-button, color='primary') Edit
+          button.btn-primary(mat-raised-button, color='primary') Edit
 
-  mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Account:
-    mat-card-content.form
-      form.form([formGroup]='accountGroup')
-        mat-form-field
-          input(matInput, color='primary', placeholder='Account', formControlName='account')
+  mat-card
+    mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Your Account:
+      mat-card-content.form
+        form.form([formGroup]='accountGroup')
+          mat-form-field
+            input(matInput, color='primary', placeholder='Account', formControlName='account')

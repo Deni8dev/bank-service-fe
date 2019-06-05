@@ -1,0 +1,15 @@
+div.top-bar([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
+  button(mat-icon-button).bar-icon
+  div.navigation
+    button(mat-button, [routerLink]='"movements"') Movements
+    button(mat-button) Transactions
+
+    div.user-bar
+      | {{ user.name }}
+      button(mat-icon-button, [matMenuTriggerFor]='menu')
+        mat-icon more_vert
+      mat-menu(#menu='matMenu')
+        button(mat-menu-item, [routerLink]='"/profile"')
+          span Profile Settings
+        button(mat-menu-item, (click)='signOut()')
+          span Sign out

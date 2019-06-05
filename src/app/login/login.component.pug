@@ -3,7 +3,6 @@ div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
   h1.title Welcome to
     mat-card-content
       img.image(src='assets/slmndrgreen.png', width= '70px')
-  h1.title {{ title }}!
 
   div.form-container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
     mat-card
@@ -15,7 +14,7 @@ div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
           mat-form-field
             input(matInput, placeholder='Password', formControlName='password', type='password')
 
-          mat-error([hidden]='false') Login error
+          mat-error(*ngIf='loginError') Login error
 
           div([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
             a(mat-button, color='primary', routerLink='register') Register

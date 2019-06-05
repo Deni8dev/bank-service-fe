@@ -18,7 +18,7 @@ export class User implements Deserializable {
   gender: Gender;
 
   deserialize(input: any) {
-    Object.assign(this, input);
+    Object.assign(new User(), JSON.parse(input));
     return this;
   }
 }

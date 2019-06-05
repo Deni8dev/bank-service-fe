@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   Shell.childRoutes([
     { path: 'profile', component: ProfileComponent },
-    { path: 'profile/movements', component: MovementsComponent },
-    { path: 'profile/transactions', component: TransactionsComponent },
+    { path: 'movements', component: MovementsComponent },
+    { path: 'transactions', component: TransactionsComponent },
   ])
 ];
 
