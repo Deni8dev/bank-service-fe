@@ -24,6 +24,41 @@ const ELEMENT_DATA: SalColumns[] = [
     tpIdentification: 45365345345,
     tpName: 'FULANITO',
     approval: true
+  },
+  {
+    typeMovement: 'SEND',
+    valueMovement: 4654654654,
+    dateMovement: '20-08-2019 10:00:00',
+    tpAccount: '*5645',
+    tpIdentification: 45365345345,
+    tpName: 'FULANITO',
+    approval: true
+  },
+  {
+    typeMovement: 'SEND',
+    valueMovement: 4654654654,
+    dateMovement: '20-08-2019 10:00:00',
+    tpAccount: '*5645',
+    tpIdentification: 45365345345,
+    tpName: 'FULANITO',
+    approval: true
+  },
+  {
+    typeMovement: 'SEND',
+    valueMovement: 4654654654,
+    dateMovement: '20-08-2019 10:00:00',
+    tpAccount: '*5645',
+    tpIdentification: 45365345345,
+    tpName: 'FULANITO',
+    approval: true
+  },  {
+    typeMovement: 'SEND',
+    valueMovement: 4654654654,
+    dateMovement: '20-08-2019 10:00:00',
+    tpAccount: '*5645',
+    tpIdentification: 45365345345,
+    tpName: 'FULANITO',
+    approval: true
   }
 ];
 
