@@ -2,6 +2,7 @@ div.top-bar([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
   div.icon-bar([fxLayout]='"row"', [fxLayoutAlign]='"space-between center"')
     div.img
     div.text Salamandra Bank
+  span {{ now | date:'medium' }}
   div.navigation
     button(mat-button, [routerLink]='"/movements"') Movements
     button(mat-button, [routerLink]='"/transactions"' ) Transactions

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../dto/user.dto';
 import { CookieService } from 'ngx-cookie-service';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { of } from 'rxjs/internal/observable/of';
 
@@ -23,21 +23,21 @@ export class LoginService {
   constructor(private httpClient: HttpClient,
               private cookieService: CookieService) {
     const str = this.cookieService.get(LoginService.sessionStorageKey);
-    this.sessionStorage = {user: str ? new User().deserialize(str) : null};
+    this.sessionStorage = { user: str ? new User().deserialize(str) : null };
   }
 
   login(name: string, pass: string): Observable<boolean> {
     return this.httpClient
       .post<User>(
         `${environment.service_url}/login`,
-        {username: name, password: pass}
+        { username: name, password: pass }
       ).pipe(map(user => {
         if (user) {
           this.saveSessionData(user);
           return true;
         }
         return false;
-      }));
+      })).pipe(catchError(() => of(false)));
   }
 
   logout() {
@@ -47,7 +47,7 @@ export class LoginService {
   }
 
   saveSessionData(u: User): void {
-    this.sessionStorage = {user: u};
+    this.sessionStorage = { user: u };
     console.log(this.sessionStorage);
     this.cookieService.set(LoginService.sessionStorageKey, JSON.stringify(u));
   }

@@ -11,10 +11,13 @@ import { User } from '../../../dto/user.dto';
 export class NavigationComponent implements OnInit {
 
   user: User;
+  now = new Date();
 
   constructor(private router: Router, private loginService: LoginService) {
     this.user = this.loginService.sessionUserStorage();
-    console.log(this.user);
+    setInterval(() => {
+      this.now = new Date();
+    }, 1);
   }
 
   ngOnInit() {

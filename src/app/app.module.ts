@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,11 +12,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { MovementsComponent } from './movements/movements.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationGuard } from './login/authentication.guard';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ShellModule } from './shell/shell.module';
 import { CookieService } from 'ngx-cookie-service';
 import { EnumToArrayPipe } from './util/enum-to-array-pipe';
+import { GlobalErrorHandler } from './util/global.error-handler';
+import { HttpErrorInterceptor } from './util/http.error-interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,11 @@ import { EnumToArrayPipe } from './util/enum-to-array-pipe';
     HttpClientModule,
     ShellModule
   ],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

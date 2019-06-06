@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           this.loginGroup.markAsPristine();
         } else
           this.loginError = !value;
-      });
+      }, () => this.loginError = false);
   }
 
   private buildForm() {
