@@ -10,7 +10,7 @@ div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
       mat-card-content
         form.form([formGroup]='loginGroup', (ngSubmit)='login()')
           mat-form-field
-            input(matInput, color='primary', placeholder='Username', formControlName='username')
+            input(matInput, color='primary', placeholder='Username', formControlName='username', autocomplete='off')
           mat-form-field
             input(matInput, placeholder='Password', formControlName='password', type='password')
 

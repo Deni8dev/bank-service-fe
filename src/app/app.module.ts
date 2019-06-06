@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,7 +12,6 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { MovementsComponent } from './movements/movements.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationGuard } from './login/authentication.guard';
 import { ShellModule } from './shell/shell.module';
 import { CookieService } from 'ngx-cookie-service';
 import { EnumToArrayPipe } from './util/enum-to-array-pipe';

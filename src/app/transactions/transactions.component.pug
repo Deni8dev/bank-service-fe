@@ -1,13 +1,6 @@
-a(mat-button, color='primary', (click)='goToProfile()') < Profile
-div([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-  h1.profile Hello
-  div.container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-    h1.profile {{ name }}
-      mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"')
-        img.photo(src='assets/slmndrgreen.png', width= '70px')
-
 div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
-  mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Do a transaction:
+  mat-card
+    mat-card-header.profile([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"') Do a transaction:
     mat-card-content.form
       form.form([formGroup]='transactionsGroup', (ngSubmit)='doTransaction()')
         mat-form-field

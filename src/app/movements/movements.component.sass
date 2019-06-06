@@ -1,21 +1,25 @@
-.container
-  width: 800px
-
-.profile
-  font-size: 40px
-  font-family: 'Courier New', sans-serif
+@mixin column-width($value)
   color: green
-  alignment: center
+  font-weight: bold
+  min-width: $value
 
-.form
-  width: 350px
+.column-1
+  @include column-width(140px)
 
-mat-form-field
-  display: block
+.column-2
+  @include column-width(200px)
 
-.photo
-  position: relative
-  alignment: left
+.column-3
+  @include column-width(200px)
 
-.btn-primary
-  background-color: darkslategray
+.column-4
+  @include column-width(100px)
+
+.column-5
+  @include column-width(150px)
+
+.column-6
+  @include column-width(150px)
+
+.column-7
+  @include column-width(100px)
