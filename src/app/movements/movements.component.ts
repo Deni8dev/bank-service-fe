@@ -32,7 +32,7 @@ const ELEMENT_DATA: SalColumns[] = [
     tpAccount: '*5645',
     tpIdentification: 45365345345,
     tpName: 'FULANITO',
-    approval: true
+    approval: false
   },
   {
     typeMovement: 'SEND',
@@ -50,7 +50,7 @@ const ELEMENT_DATA: SalColumns[] = [
     tpAccount: '*5645',
     tpIdentification: 45365345345,
     tpName: 'FULANITO',
-    approval: true
+    approval: false
   },  {
     typeMovement: 'SEND',
     valueMovement: 4654654654,
@@ -58,7 +58,7 @@ const ELEMENT_DATA: SalColumns[] = [
     tpAccount: '*5645',
     tpIdentification: 45365345345,
     tpName: 'FULANITO',
-    approval: true
+    approval: false
   }
 ];
 
