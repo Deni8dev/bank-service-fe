@@ -30,7 +30,7 @@ div.form-container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"
         mat-form-field
           input(matInput, placeholder='Username', [(ngModel)]='model.username', [ngModelOptions]='{standalone: true}')
         mat-form-field
-          input(matInput, placeholder='Password', [(ngModel)]='model.password', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Password', [(ngModel)]='model.password', [ngModelOptions]='{standalone: true}',type='password')
 
         mat-error([hidden]='false') Please review all fields
 

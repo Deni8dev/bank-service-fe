@@ -11,6 +11,7 @@ import { User } from '../../../dto/user.dto';
 export class NavigationComponent implements OnInit {
 
   user: User;
+  // currentDate: new Date();
 
   constructor(private router: Router, private loginService: LoginService) {
     this.user = this.loginService.sessionUserStorage();
