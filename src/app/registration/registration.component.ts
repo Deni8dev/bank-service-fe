@@ -4,6 +4,7 @@ import { RegistrationService } from './registration.service';
 import { User } from '../dto/user.dto';
 import { Gender } from '../dto/gender.dto';
 import { UserTypeId } from '../dto/user-type-id.dto';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,18 +17,18 @@ export class RegistrationComponent implements OnInit {
   registrationGroup: FormGroup;
   model: User;
   genderArray = [
-    {value: Gender.MALE, viewValue: 'Male'},
-    {value: Gender.FEMALE, viewValue: 'Female'}
+    { value: Gender.MALE, viewValue: 'Male' },
+    { value: Gender.FEMALE, viewValue: 'Female' }
   ];
   idTypeArray = [
-    {value: UserTypeId.ID_CARD, viewValue: 'F I Card'},
-    {value: UserTypeId.FI_CARD, viewValue: 'Identification Card'},
-    {value: UserTypeId.PASSPORT, viewValue: 'Passport'}
+    { value: UserTypeId.ID_CARD, viewValue: 'F I Card' },
+    { value: UserTypeId.FI_CARD, viewValue: 'Identification Card' },
+    { value: UserTypeId.PASSPORT, viewValue: 'Passport' }
   ];
-  title = 'Salamandra Bank';
 
-  constructor(private registrationService: RegistrationService) {
-  }
+  error: boolean;
+
+  constructor(private router: Router, private registrationService: RegistrationService) { }
 
   ngOnInit() {
     this.model = new User();
@@ -35,10 +36,15 @@ export class RegistrationComponent implements OnInit {
   }
 
   registerUser() {
-    console.log(this.model);
     this.registrationService
-      .registerUser(new User().deserialize(this.registrationGroup.getRawValue()))
-      .subscribe(() => console.log('registered'));
+      .registerUser(this.model)
+      .subscribe(registered => {
+        if (registered) {
+          this.error = false;
+          this.router.navigate(['/']).finally();
+        } else
+          this.error = true;
+      });
   }
 
   private buildForm() {
