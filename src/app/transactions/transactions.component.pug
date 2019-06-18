@@ -4,16 +4,15 @@ div([fxLayout]='"row"', [fxLayoutAlign]='"space-around center"')
     mat-card-content.form
       form.form([formGroup]='transactionsGroup', (ngSubmit)='doTransaction()')
         mat-form-field
-          input(matInput, color='primary', placeholder='Type', formControlName='typeMovement')
+          input(matInput, placeholder='Origin Account', [value]='account.accountNumber', formControlName='originAccount', readonly)
         mat-form-field
-          input(matInput, color='primary', placeholder='Value', formControlName='valueMovement')
+          input(matInput, placeholder='Target Account', type='number', formControlName='targetAccount')
+          mat-error(*ngIf='transactionsGroup.controls.valueMovement.invalid')
+            | Account number is not valid
         mat-form-field
-          input(matInput, color='primary', placeholder='Date', formControlName='dateMovement')
-        mat-form-field
-          input(matInput, color='primary', placeholder='Third Party Account', formControlName='tpAccount')
-        mat-form-field
-          input(matInput, color='primary', placeholder='Third Party Identification', formControlName='tpIdentification')
-        mat-form-field
-          input(matInput, color='primary', placeholder='Third Party Name', formControlName='tpName')
-        div([fxLayout]='"row"', [fxLayoutAlign]='"start center"')
-          button.btn-snd(mat-raised-button, color='primary') Confirm
+          input(matInput, placeholder='Transaction Value', type='number', formControlName='valueMovement')
+          mat-error(*ngIf='transactionsGroup.controls.valueMovement.invalid')
+            | Transaction value is not valid
+
+        div([fxLayout]='"row"', [fxLayoutAlign]='"start end"')
+          button.btn-primary(mat-raised-button, color='primary') Confirm

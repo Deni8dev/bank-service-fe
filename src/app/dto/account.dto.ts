@@ -1,6 +1,8 @@
 import { Deserializable } from './deserializable.dto';
 
 export class Account implements Deserializable {
+
+  id: number;
   accountNumber: string;
   balance: number;
   userId: number;

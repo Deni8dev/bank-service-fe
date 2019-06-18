@@ -4,33 +4,33 @@ div.form-container([fxLayout]='"column"', [fxLayoutAlign]='"space-around center"
     mat-card-content
       form.form([formGroup]='registrationGroup', (ngSubmit)='registerUser()')
         mat-form-field
-          input(matInput, placeholder='Name', [(ngModel)]='model.name', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Name', [(ngModel)]='movement.name', [ngModelOptions]='{standalone: true}')
         mat-form-field
-          input(matInput, placeholder='Last name', [(ngModel)]='model.lastName', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Last name', [(ngModel)]='movement.lastName', [ngModelOptions]='{standalone: true}')
         mat-form-field
-          input(matInput, placeholder='email', [(ngModel)]='model.email', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='email', [(ngModel)]='movement.email', [ngModelOptions]='{standalone: true}')
         mat-form-field
           mat-label Identification Type
-          mat-select([(ngModel)]='model.userIdType', [ngModelOptions]='{standalone: true}')
+          mat-select([(ngModel)]='movement.userIdType', [ngModelOptions]='{standalone: true}')
             mat-option(*ngFor='let typeId of idTypeArray', [value]='typeId.value') {{ typeId.viewValue }}
         mat-form-field
-          input(matInput, placeholder='Identification', [(ngModel)]='model.userId', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Identification', [(ngModel)]='movement.userId', [ngModelOptions]='{standalone: true}')
         mat-form-field
-          input(matInput, placeholder='Phone', [(ngModel)]='model.phone', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Phone', [(ngModel)]='movement.phone', [ngModelOptions]='{standalone: true}')
         mat-form-field
-          input(matInput, placeholder='Address', [(ngModel)]='model.address', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Address', [(ngModel)]='movement.address', [ngModelOptions]='{standalone: true}')
         mat-form-field
-          input(matInput, placeholder='Country', [(ngModel)]='model.country', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Country', [(ngModel)]='movement.country', [ngModelOptions]='{standalone: true}')
         mat-form-field
           mat-label Gender
-          mat-select([(ngModel)]='model.gender', [ngModelOptions]='{standalone: true}')
+          mat-select([(ngModel)]='movement.gender', [ngModelOptions]='{standalone: true}')
             mat-option(*ngFor='let gender of genderArray', [value]='gender.value') {{ gender.viewValue }}
 
         h4 Login Config
         mat-form-field
-          input(matInput, placeholder='Username', [(ngModel)]='model.username', [ngModelOptions]='{standalone: true}')
+          input(matInput, placeholder='Username', [(ngModel)]='movement.username', [ngModelOptions]='{standalone: true}')
         mat-form-field
-          input(matInput, placeholder='Password', [(ngModel)]='model.password', [ngModelOptions]='{standalone: true}',type='password')
+          input(matInput, placeholder='Password', [(ngModel)]='movement.password', [ngModelOptions]='{standalone: true}',type='password')
 
         mat-error(*ngIf='error || (registrationGroup.invalid && registrationGroup.touched)') Please review all fields
 

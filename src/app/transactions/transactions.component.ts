@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { TransactionsService } from './transactions.service';
+import { LoginService } from '../login/login.service';
+import { ProfileService } from '../profile/profile.service';
+import { Account } from '../dto/account.dto';
 
 @Component({
   selector: 'app-transactions',
@@ -9,31 +12,40 @@ import { Router } from '@angular/router';
 })
 export class TransactionsComponent implements OnInit {
 
-  name: 'Salamandra';
   transactionsGroup: FormGroup;
+  account: Account;
 
-  constructor(private router: Router) { }
+  constructor(private transactionsService: TransactionsService,
+              private loginService: LoginService,
+              private profileService: ProfileService) { }
 
   ngOnInit() {
+    this.profileService.getUserAccount(this.loginService.sessionUserStorage().id)
+      .subscribe(account => this.account = account);
     this.buildForm();
   }
 
   doTransaction() {
-    console.error('Login in ' + this.transactionsGroup.getRawValue());
-  }
-
-  goToProfile() {
-    this.router.navigate(['/profile'], {replaceUrl: true});
+    this.transactionsService.saveTransaction(this.transactionsGroup.getRawValue());
   }
 
   private buildForm() {
     this.transactionsGroup = new FormGroup({
-      typeMovement: new FormControl('', Validators.required),
-      valueMovement: new FormControl('', Validators.required),
-      dateMovement: new FormControl('', Validators.required),
-      tpAccount: new FormControl('', Validators.required),
-      tpIdentification: new FormControl('', Validators.required),
-      tpName: new FormControl('', Validators.required)
+      originAccount: new FormControl({ disabled: true }, Validators.required),
+      valueMovement: new FormControl('', {
+        updateOn: 'change',
+        validators: [
+          Validators.required,
+          Validators.min(10000)
+        ]
+      }),
+      targetAccount: new FormControl('', {
+        updateOn: 'change',
+        validators: [
+          Validators.required,
+          Validators.min(1000000000000000)
+        ]
+      })
     });
   }
 
